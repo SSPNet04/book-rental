@@ -1,0 +1,126 @@
+<html>
+<head><title>BookRental</title>
+
+<style>
+table,td
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+tr
+{
+    text-align: center;
+}
+.menu
+{
+    width: 25%;
+}
+</style>
+
+</head>
+<body>
+<table width="100%" height="7%">
+    <tr>
+        <td class="menu"><a href="home.html">Home</a></td>
+        <td class="menu" style="background-color:rgb(180, 180, 180)">Customer List</td>
+        <td class="menu"><a href="BookList.html">Book List</a></td>
+        <td class="menu"><a href=History.html>History</a></td>
+    </tr>
+</table>
+<br>
+<table width="40%" height="10%" style="border-radius:100px;border-collapse: separate;" >
+    <tr>
+        <th style="font-size:40;">Customer List</th>
+    </tr>
+</table>
+<br>
+<form>
+    <input type="text" placeholder="Search" id="search">
+
+    <label>Sort By:
+        <select name="Sort" id="sortby">
+            <option value="CustomerID">Customer ID</option>
+            <option value="CustomerName">Customer Name</option>
+            <option value="Point">Point</option>
+            <option value="AllTimeSpent">All Time Spent</option>
+            <option value="BookRenting">Book Renting</option>
+        </select>
+        </label>
+    
+         <label>
+            <input type="checkbox" id="descending">
+            Descending
+        </label>&nbsp&nbsp&nbsp&nbsp
+    
+        <input type="button" onclick=sortdata() value="Find" style="width:100px">
+</form>
+<table border="1" width="70%" id="list">
+
+</table>
+<br>
+<table style="border:0px;" class="newcustomer">
+    <tr>
+        <td style="border:0px;">
+            Personal ID:
+        </td>
+        <td>
+            <input type="text" id="newcustomerid">
+        </td>
+    </tr>
+    <tr>
+        <td style="border:0px;">
+            Customer Name:
+        </td>
+        <td>
+            <input type="text" id="newcustomername">
+        </td>
+    </tr>
+    <tr>
+        <td style="border:0px;">
+            Phone Number
+        </td>
+        <td>
+            <input type="text" id="newphone">
+        </td>
+    </tr>
+
+    <tr>
+        <td style="border:0px;"></td>
+        <td style="border:0px;"><input type="button" onclick=newmember() value="New Member"></td>
+        
+    </tr>
+</table>
+
+<br>
+<table style="display:none;" id="infotable">
+
+</table>
+<br>
+
+<table style="display:none;" id="edittable">
+    <tr>
+        <th colspan="3">Edit</th>
+    </tr>
+    <tr>
+        <td>Customer ID</td>
+        <td colspan="2"><input type="text" id="CustomerIDediter"></td>
+    </tr>
+    <tr>
+        <td>Customer Name</td>
+        <td colspan="2"><input type="text" id="editcustomername"></td>
+    </tr>
+    <tr>
+        <td>Phone Number</td>
+        <td colspan="2"><input type="text" id="editphone"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Delete" id="deleted" onclick=deleted()></td>
+        <td colspan="2"><input type="button" value="Ok" id="updated" onclick=update()></td>
+    </tr>
+</table>
+
+<script src="CustomerList.js"></script>
+<script src="NewMember.js"></script>
+<script src="CustomerInfo.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<html>
+<head><title>BookRental</title>
+<style>
+table,td
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+tr
+{
+    text-align: center;
+}
+.menu
+{
+    width: 25%;
+}
+</style>
+
+</head>
+<body>
+
+<table width="100%" height="7%">
+    <tr>
+        <td class="menu"><a href="Home.html">Home</a></td>
+        <td class="menu"><a href="CustomerList.html">Customer List</a></td>
+        <td class="menu" style="background-color:rgb(180, 180, 180)">Book List</td>
+        <td class="menu"><a href=History.html>History</a></td>
+    </tr>
+</table>
+<br>
+<table width="40%" height="10%" style="border-radius:100px;border-collapse: separate;" >
+    <tr>
+        <th style="font-size:40;">Book List</th>
+    </tr>
+</table>
+<br>
+<form>
+    <input type="text" placeholder="SearchName" id="search">&nbsp
+
+    <label>Sort By:
+    <select name="Sort" id="sortby">
+        <option value="BookUID">Book UID</option>
+        <option Value="MalID">MAL ID</option>
+        <option value="BookName">Book Name</option>
+        <option value="Late">Late</option>
+        <option value="InStock">In Stock</option>
+        <option value="InRental">In Rental</option>
+        <option value="Price">Price</option>
+        <option value="AllTimeRent">All Time Rent</option>
+    </select>
+    </label>
+
+     <label>
+        <input type="checkbox" id="descending">
+        Descending
+    </label>&nbsp&nbsp&nbsp&nbsp
+
+    <input type="button" onclick=sortdata() value="Find" style="width:100px">
+</form>
+
+<table border="1" width="70%" id="list">
+    <tr>
+        <th width="250">Book</th>
+        <th>Book UID</th>
+        <th>Mal ID</th>
+        <th>Late</th>
+        <th>In Stock</th>
+        <th>In Rental</th>
+        <th>Price</th>
+        <th width ="150">All Time Rent</th>
+    </tr>
+</table>
+
+<br>
+<table style="border:0px;">
+    <tr>
+        <td style="border:0px;">
+            BookUID:
+        </td>
+        <td>
+            <input type="text" id="bookuid">
+        </td>
+    </tr>
+    <tr>
+        <td style="border:0px;">
+            MalID:
+        </td>
+        <td>
+            <input type="text" id="malid">
+        </td>
+    </tr>
+    <tr>
+        <td style="border:0px;">
+            BookName:
+        </td>
+        <td>
+            <input type="text" id="bookname">
+        </td>
+    </tr>
+    <tr>
+        <td style="border:0px;">
+            In Stock
+        </td>
+        <td>
+            <input type="text" id="instock">
+        </td>
+    </tr>
+    <tr>
+        <td style="border:0px;">
+            Price
+        </td>
+        <td>
+            <input type="text" id="price">
+        </td>
+    </tr>
+    <tr>
+        <td style="border:0px;"></td>
+        <td style="border:0px;"><input type="submit" onclick=create() value="Create New Book"></td>
+        
+    </tr>
+</table>
+<br>
+<table style="display:none;" id="edittable">
+    <tr>
+        <th colspan="3">Edit</th>
+    </tr>
+    <tr>
+        <td>book UID</td>
+        <td colspan="2"><input type="text" id="bookUIDediter"></td>
+    </tr>
+    <tr>
+        <td>MalID</td>
+        <td colspan="2"><input type='text' id="editmalid"></td>
+    </tr>
+    <tr>
+        <td>book Name</td>
+        <td colspan="2"><input type="text" id="editbookname"></td>
+    </tr>
+    <tr>
+        <td>In Stock</td>
+        <td colspan="2"><input type="text" id="editinstock"></td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td colspan="2"><input type="text" id="editprice"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Delete" id="deleted" onclick=deleted()></td>
+        <td colspan="2"><input type="button" value="Ok" id="updated" onclick=update()></td>
+    </tr>
+</table>
+
+<script src="BookList.js"></script>
+<script src="BookEdit.js"></script>
+</body>
+</html>

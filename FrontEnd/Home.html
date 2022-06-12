@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <title>BookRental</title>
+        <style>
+            .menu
+            {
+                width: 25%;
+                border: 1px solid black;
+                text-align: center;
+            }
+            .list
+            {
+                padding: 10;
+            }
+        </style>
+    </head>
+<body>
+    
+<table width="100%" height="7%" style="border:1px solid black;border-collapse: collapse;">
+    <tr>
+        <td class="menu" style="background-color:rgb(180, 180, 180)">Home</td>
+        <td class="menu"><a href="CustomerList.html">Customer List</a></td>
+        <td class="menu"><a href="BookList.html">Book List</a></td>
+        <td class="menu"><a href="History.html">History</a></td>
+    </tr>
+</table>
+
+<table border="1" width="100%" height="100%">
+<tr>
+
+    <td width="50%" rowspan="2" style="text-align:center;">
+
+        <h1>Renting</h1>
+        <br>Customer<br>
+
+        <input type="text" placeholder="Name" id="customername" value="">
+        <input type="button" onclick=customerdropdown() value="Search">
+
+        <div>
+            <br>Result:
+            <select id="resultcustomerdropdown"></select>
+        </div>
+        <div>
+            <br>ID: 
+            <input type="text" id="customerid" style="width:50px;">
+            <br>
+        </div>
+        <div>
+            <br>
+            <input type="button" value="Select" onclick=customerselect()>
+        </div>
+        
+        <table border="1" style="border-collapse: collapse;" align="center">
+
+            <tr>
+                <td class="list">
+                    Book
+                    
+                        <input type="text" id="booksearch" class="bookinsertclass">
+                        <input type="button" value="Search" onclick=bookdropdown() class="bookinsertclass">
+                        <div>
+                            <br>
+                            <select id="resultbookdropdown" class="bookinsertclass"></select>
+                            <input type="button" value="Insert" onclick=bookinsert() class="bookinsertclass">
+                            
+                        </div>
+                        
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td class="list" >
+                    <div style="overflow:auto;height:150px;">
+                        List
+                    <table border="1" style="border-collapse:collapse" id="bookinserting">
+                        <tr style="background-color: rgb(190, 190, 190);">
+                            <th>Book</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </table>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="list">
+                    <table style="text-align: center;">
+                        <tr>
+                            <td>
+                                Return Date
+                            </td>
+                            <td rowspan="2" style="border:1px solid black; padding:10" id="total">
+                                Total:0
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border:1px solid black; padding:10" id="returndate">
+                                
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+
+        </table>
+        <br>
+        <form>
+            <input type="button" style="width: 200px;" value="Rent" id="rentsubmitbutton" class="bookinsertclass" onclick=rentsubmit()>
+        </form>
+    </td>
+
+    <td height="50%" colspan="2">
+        <h1 style="text-align: center;">New Member</h1>
+
+        <table align="center" >
+            <tr >
+                <td>
+                    Customer Name
+                    <form>
+                        <input type="text" id="newcustomername">
+                    </form>
+                </td>
+                <td>
+                    Phone Number
+                    <form>
+                        <input type="text" id="newphone">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Personal ID
+                    <form>
+                        <input type="text" id="newcustomerid">
+                    </form>
+                </td>
+                <td style="text-align: center;">
+                    <form>
+                        <input type="button" style="margin-top: 18px;width: 170px;" onclick=newmember() value="Submit">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </td>
+
+</tr>
+<tr>
+
+    <td height="50%" width="20%" style="text-align: center;">
+
+        <h1>Return</h1>
+        Customer
+
+        <form>
+        <input type="text" id="returnsearch">
+        <input type="button" value="Search" onclick=searchreturn()>
+        </form>
+        <div>
+            <select id="returndropdown"></select>
+            <input type="button" value="Select" id="returncustomerselect" onclick=rentinglist()>
+        </div>
+
+        <table width="100%" border="1" style="border-collapse:collapse;text-align: center;">
+            <td id="latefee">
+                Late Fee:<br>xxx.xx
+            </td>
+        </table>
+        <br>
+            <input type="submit" style="width:200px;" onclick=returnbook()>
+    </td>
+
+    <td>
+        <div>Customer ID:&nbsp<input type="text" style="width:50px;" id="returncustomerid"><br></div>
+        <div style="overflow:auto"></div>
+        <span id="returncustomerlistname"></span>
+        <table border="1" style="border-collapse:collapse;padding:10px;width:100%;" align="center" id="renting">
+            <tr style="background-color: rgb(190, 190, 190);">
+                <th>Book</th>
+                <th>Return Date</th>
+                <th></th>
+            </tr>
+            </tr>
+        </table>
+    </td>
+
+</tr>
+</table>
+
+<script src="NewMember.js"></script>
+<script src="Renting.js"></script>
+<script src="Return.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile> 
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\lib\Auth\Auth.csproj" />
+    <ProjectReference Include="..\..\..\..\lib\PagingExtensions\PagingExtensions.csproj" />
+    <ProjectReference Include="..\..\..\Databases\Database.Models\Database.Models.csproj" />
+    <ProjectReference Include="..\..\Base.DTOs\Base.DTOs.csproj" />
+    <ProjectReference Include="..\BookRent.DTOs\BookRent.DTOs.csproj" />
+    <ProjectReference Include="..\BookRent.Services\BookRent.Services.csproj" />
+    <ProjectReference Include="..\..\Base.DTOs\Base.DTOs.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\lib\DateTimeExtensions\DateTimeExtensions.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+
+</Project>
